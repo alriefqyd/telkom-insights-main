@@ -29,7 +29,3 @@ module.exports = {
     return await Feedback.findOneAndUpdate({ _id }, {isActive:false});
   },
 }
-//   createRole: async function (data) {
-//     const { name, type } = data;
-//     return await Role.create({ name, type });
-//   },

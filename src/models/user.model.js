@@ -20,7 +20,7 @@ let schema = mongoose.Schema(
     role: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: "Role",
-      required: true,
+      required: false,
     },
     isEmailVerified: {
       type: Boolean,
