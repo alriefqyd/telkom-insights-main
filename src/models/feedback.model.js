@@ -10,6 +10,10 @@ let schema = mongoose.Schema(
       type: String,
       required: true,
     },
+    bookings_id: {
+      type: String,
+      required: true,
+    }
   },
   { timestamps: true }
 );

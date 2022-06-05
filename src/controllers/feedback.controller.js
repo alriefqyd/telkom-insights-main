@@ -10,6 +10,15 @@ module.exports = {
       res.failServerError(error.message);
     }
   },
+  getFeedbackById: async (req, res) => {
+    try {
+      const feedbacks = await feedbackService.getFeedbackById(req.params.id);
+      res.ok(feedbacks, "Success to get all feedback.");
+    } catch (error) {
+      console.log(error);
+      res.failServerError(error.message);
+    }
+  },
   createFeedback: async (req, res) => {
     try {
       const feedbacks = await feedbackService.createFeedback(req.body);
@@ -19,15 +28,15 @@ module.exports = {
       res.failServerError(error.message);
     }
   },
-//   updateRole: async (req, res) => {
-//     try {
-//       const roles = await roleService.updateRole(req.params.id, req.body);
-//       res.respondUpdated(roles, "Success to update a new role.");
-//     } catch (error) {
-//       console.log(error);
-//       res.failServerError(error.message);
-//     }
-//   },
+  updateFeedback: async (req, res) => {
+    try {
+      const roles = await feedbackService.updateFeedback(req.params.id, req.body);
+      res.respondUpdated(roles, "Success to update a feedback.");
+    } catch (error) {
+      console.log(error);
+      res.failServerError(error.message);
+    }
+  },
 //   softDeleteRole: async (req, res) => {
 //     try {
 //       await roleService.softDeleteRole(req.params.id);

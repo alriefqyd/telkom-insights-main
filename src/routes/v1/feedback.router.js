@@ -4,7 +4,7 @@ const controller = require('../../controllers/feedback.controller');
 
 
 router.get('/', controller.getFeedback);
-// router.get('/:id', controller.getFeedbackById);
+router.get('/:id', controller.getFeedbackById);
 router.post('/', controller.createFeedback);
-
+router.put('/:id',controller.updateFeedback)
 module.exports = router;
