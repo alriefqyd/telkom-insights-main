@@ -13,6 +13,10 @@ let schema = mongoose.Schema(
     bookings_id: {
       type: String,
       required: true,
+    },
+    isActive: {
+      type:Boolean,
+      default:true,
     }
   },
   { timestamps: true }

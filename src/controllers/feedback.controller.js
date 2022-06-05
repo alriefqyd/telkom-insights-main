@@ -37,13 +37,13 @@ module.exports = {
       res.failServerError(error.message);
     }
   },
-//   softDeleteRole: async (req, res) => {
-//     try {
-//       await roleService.softDeleteRole(req.params.id);
-//       res.respondDeleted("Success to delete a role.");
-//     } catch (error) {
-//       console.log(error);
-//       res.failServerError(error.message);
-//     }
-//   },
+  deleteFeedback: async (req, res) => {
+    try {
+      await feedbackService.deleteFeedback(req.params.id);
+      res.respondDeleted("Success to delete a role.");
+    } catch (error) {
+      console.log(error);
+      res.failServerError(error.message);
+    }
+  },
 };

@@ -1,7 +1,7 @@
 const { Role, Feedback } = require("../models/index");
 
 const getFeedback = (req, res) => {
-    return Feedback.find({});
+    return Feedback.find({isActive:true}).exec();
 }
 
 const getFeedbackById = (_id, res) => {
@@ -25,11 +25,11 @@ module.exports = {
       }
     );
   },
+  deleteFeedback: async function (_id) {
+    return await Feedback.findOneAndUpdate({ _id }, {isActive:false});
+  },
 }
 //   createRole: async function (data) {
 //     const { name, type } = data;
 //     return await Role.create({ name, type });
-//   },
-//   softDeleteRole: async function (_id) {
-//     return await Role.findOneAndUpdate({ _id }, { isActive: false });
 //   },
